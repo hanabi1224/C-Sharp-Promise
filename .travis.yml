@@ -1,8 +1,5 @@
 language: csharp
 solution: C-Sharp-Promise.sln
- 
-install:
-  - dotnet restore
 
 script:
   - dotnet test -c Release --framework netcoreapp2.1
