@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using RSG.Exceptions;
 using Xunit;
+using System.Threading;
 
 namespace RSG.Tests
 {
@@ -428,6 +429,7 @@ namespace RSG.Tests
             var promise3 = new Promise<float>();
             var promise4 = new Promise<double>();
 
+            var mre = new ManualResetEvent(false);
             TestHelpers.VerifyDoesntThrowUnhandledException(() =>
             {
                 var all = PromiseHelpers.All(promise1, promise2, promise3, promise4);
@@ -442,6 +444,8 @@ namespace RSG.Tests
                     Assert.Equal(true, v.Item2);
                     Assert.Equal(3.0f, v.Item3);
                     Assert.Equal(4.0, v.Item4);
+
+                    mre.Set();
                 });
 
                 promise1.Resolve(1);
@@ -451,6 +455,8 @@ namespace RSG.Tests
 
                 Assert.Equal(1, completed);
             });
+
+            mre.WaitOne();
         }
 
         [Fact]
