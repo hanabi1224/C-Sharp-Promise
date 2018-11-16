@@ -3,12 +3,9 @@ solution: C-Sharp-Promise.sln
  
 install:
   - dotnet restore
-  #- nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
- 
+
 script:
-  - dotnet build -c Release
-  - dotnet test -c Release
-  #- mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.exe ./bin/Debug/RSG.Promise.Tests.dll
+  - dotnet test -c Release --framework netcoreapp2.0
 
 mono: "5.16.0"
 dotnet: "2.1.403"

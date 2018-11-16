@@ -5,7 +5,7 @@ image: Visual Studio 2017
 init:
   - dotnet --version
 
-before_script:
+before_build:
   - cmd: msbuild /r /p:Configuration=Release
 
 pull_requests:
