@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFrameworks>netcoreapp2.0;netcoreapp2.1;</TargetFrameworks>
-        <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">net472;net462;net45;$(TargetFrameworks)</TargetFrameworks>
+        <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">net472;net462;net45;net35;$(TargetFrameworks)</TargetFrameworks>
     </PropertyGroup>
 
     <ItemGroup>
