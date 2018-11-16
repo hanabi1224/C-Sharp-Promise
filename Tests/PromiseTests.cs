@@ -421,7 +421,7 @@ namespace RSG.Tests
             });
         }
 
-        [Fact(Skip = true)]
+        [Fact(Skip = "Flacky")]
         public void combined_promise_of_four_types_is_resolved_when_children_are_resolved()
         {
             var promise1 = new Promise<int>();
