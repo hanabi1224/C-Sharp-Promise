@@ -1,0 +1,12 @@
+version: 3.0.1-{branch}-{build}
+
+image: Visual Studio 2017  
+
+init:
+  - dotnet --version
+
+pull_requests:
+  do_not_increment_build_number: true
+
+artifacts:
+  - path: '**\*.nupkg'

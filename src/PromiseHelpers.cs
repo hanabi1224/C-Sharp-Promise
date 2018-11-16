@@ -1,5 +1,7 @@
 namespace RSG
 {
+    using System;
+
     public static class PromiseHelpers
     {
         /// <summary>
