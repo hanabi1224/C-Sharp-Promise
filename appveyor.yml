@@ -5,8 +5,8 @@ image: Visual Studio 2017
 init:
   - dotnet --version
 
-build_script:
-  - cmd: dotnet build -c Release
+before_script:
+  - cmd: msbuild /r /p:Configuration=Release
 
 pull_requests:
   do_not_increment_build_number: true

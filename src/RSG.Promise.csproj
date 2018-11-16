@@ -12,4 +12,5 @@
         <SignAssembly>true</SignAssembly>
         <AssemblyOriginatorKeyFile>C-Sharp-Promise.snk</AssemblyOriginatorKeyFile>
     </PropertyGroup>
+
 </Project>
