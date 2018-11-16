@@ -2,7 +2,7 @@ language: csharp
 solution: C-Sharp-Promise.sln
 
 script:
-  - dotnet test -c Release --framework netcoreapp2.1
+  - dotnet test -c Release --framework netcoreapp2.1 Tests
 
 mono: none #"5.16.0"
 dotnet: "2.1.403"
