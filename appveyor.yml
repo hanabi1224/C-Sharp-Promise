@@ -6,7 +6,7 @@ init:
   - dotnet --version
 
 before_build:
-  - cmd: msbuild /r /p:Configuration=Release
+  - cmd: msbuild /r /p:Configuration=Release /v:m
 
 pull_requests:
   do_not_increment_build_number: true
