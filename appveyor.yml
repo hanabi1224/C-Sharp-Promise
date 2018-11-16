@@ -1,0 +1,20 @@
+version: 3.0.1-{branch}-{build}
+
+image: Visual Studio 2017  
+
+init:
+  - dotnet --version
+
+configuration: Release
+
+build:
+  verbosity: minimal
+
+before_build:
+  - cmd: msbuild /r /p:Configuration=Release /v:m
+
+pull_requests:
+  do_not_increment_build_number: true
+
+artifacts:
+  - path: '**\*.nupkg'
