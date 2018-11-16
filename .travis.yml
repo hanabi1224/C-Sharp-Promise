@@ -2,9 +2,13 @@ language: csharp
 solution: C-Sharp-Promise.sln
  
 install:
-  - nuget restore C-Sharp-Promise.sln
-  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+  - dotnet restore
+  #- nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
  
 script:
-  - msbuild /p:Configuration=Debug C-Sharp-Promise.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.exe ./bin/Debug/RSG.Promise.Tests.dll
+  - dotnet build -c Release
+  - dotnet test -c Release
+  #- mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.exe ./bin/Debug/RSG.Promise.Tests.dll
+
+mono: "5.16.0"
+dotnet: "2.1.403"
